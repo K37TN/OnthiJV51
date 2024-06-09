@@ -34,6 +34,6 @@ public class dichvuController {
     @PostMapping("/add")
     public String add(DichVu dichVu){
         service.add(dichVu);
-        return "reidrect:/dichvu/list";
+        return "redirect:/dichvu/list";
     }
 }
