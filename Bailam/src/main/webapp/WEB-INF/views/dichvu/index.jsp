@@ -23,36 +23,36 @@
     </div>
     <div class="mb-3">
         <label > Tên loại dịch vụ </label>
-    <select class="form-select" aria-label="Default select example" name="loaiDichVu">
-        <c:forEach items="#{listloaidichvu}" var="x">
-        <option value="x.id" label="x.ten" ${list.loaiDichVu.id == x.id ? "selected" : ""}></option>
-        </c:forEach>
-    </select>
+        <select class="form-select" aria-label="Default select example" name="loaiDichVu">
+            <c:forEach items="#{listloaidichvu}" var="x">
+                <option value="x.id" label="x.ten" ${list.loaiDichVu.id == x.id ? "selected" : ""}></option>
+            </c:forEach>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">ADD</button>
 </form>
 <br>
 <table class="table-striped">
-<thead>
-<tr>
-    <th>Tên dịch vụ</th>
-    <th>Đơn giá</th>
-    <th>Đơn vị tiền</th>
-    <th>Tên loại dịch vụ</th>
-    <th>Mô tả loại dịch vụ</th>
-    <th>Chức năng</th>
-</tr>
-</thead>
+    <thead>
+    <tr>
+        <th>Tên dịch vụ</th>
+        <th>Đơn giá</th>
+        <th>Đơn vị tiền</th>
+        <th>Tên loại dịch vụ</th>
+        <th>Mô tả loại dịch vụ</th>
+        <th>Chức năng</th>
+    </tr>
+    </thead>
     <tbody>
     <c:forEach items="list" var="item">
-    <tr>
-        <td>${item.ten}</td>
-        <td>${item.donGia}</td>
-        <td>${item.donViTien}</td>
-        <td>${item.loaiDichVu.ten}</td>
-        <td>${item.loaiDichVu.mota}</td>
-        <td><button type="button" class="btn btn-warning">Detail</button></td>
-    </tr>
+        <tr>
+            <td>${item.ten}</td>
+            <td>${item.donGia}</td>
+            <td>${item.donViTien}</td>
+            <td>${item.loaiDichVu.ten}</td>
+            <td>${item.loaiDichVu.mota}</td>
+            <td><button type="button" class="btn btn-warning">Detail</button></td>
+        </tr>
     </c:forEach>
     </tbody>
 </table>
