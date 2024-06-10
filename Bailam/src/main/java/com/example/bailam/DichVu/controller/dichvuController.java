@@ -36,4 +36,13 @@ public class dichvuController {
         service.add(dichVu);
         return "redirect:/dichvu/list";
     }
+    @GetMapping("/detail")
+    public String detaill(Model model,Integer id){
+        DichVu dichVu = service.detail(id);
+        model.addAttribute("listt", dichVu);
+        model.addAttribute("list", service.getAll());
+        model.addAttribute("listt",service.detail(id));
+        model.addAttribute("listloaidichvu", getAllCategory());
+        return "dichvu/index";
+    }
 }

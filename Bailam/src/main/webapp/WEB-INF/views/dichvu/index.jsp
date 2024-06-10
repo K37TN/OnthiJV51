@@ -13,32 +13,32 @@
     <div class="row">
     <div class="col-md-6 mb-3">
         <label >Tên Dịch Vụ </label>
-        <input type="text" name="ten" placeholder="Nhập tên dịch vụ" class="form-control">
+        <input type="text" name="ten" placeholder="Nhập tên dịch vụ" class="form-control" value="${listt.ten}">
     </div>
     </div>
     <div class="row">
     <div class="col-md-6 mb-3">
         <label > Đơn giá </label>
-        <input type="text" name="donGia" placeholder="Nhập đơn giá"class="form-control">
+        <input type="text" name="donGia" placeholder="Nhập đơn giá"class="form-control"value="${listt.donGia}">
     </div>
     </div>
     <div class="row">
     <div class="col-md-6 mb-3">
         <label > Đơn vị tiền </label>
-        <input type="text" name="donViTien" placeholder="Nhập đơn vị tiền"class="form-control">
+        <input type="text" name="donViTien" placeholder="Nhập đơn vị tiền"class="form-control"value="${listt.donViTien}">
     </div>
     </div>
     <div class="row">
     <div class="mb-3">
 <%--        <label > Tên loại dịch vụ </label>--%>
 <%--        <select class="form-select" aria-label="Default select example" name="loaiDichVu">--%>
-<%--            <c:forEach items="#{listloaidichvu}" var="x">--%>
-<%--                <option value="x.id" label="${x.ten}" ${list.loaiDichVu.id == x.id ? "selected" : ""}></option>--%>
+<%--            <c:forEach items="${listloaidichvu}" var="x">--%>
+<%--                <option value="${x.id}" label="${x.ten}" ${list.loaiDichVu.id == x.id ? "selected" : ""}></option>--%>
 <%--            </c:forEach>--%>
 <%--        </select>--%>
     <div class="col-md-6 mb-3">
         <label > Ten loai dich vu </label>
-        <input type="text" name="loaiDichVu" placeholder="Nhập loại dịch vụ"class="form-control">
+        <input type="text" name="loaiDichVu" placeholder="Nhập loại dịch vụ"class="form-control"value="${listt.loaiDichVu.ten}">
     </div>
     </div>
     </div>
@@ -48,6 +48,7 @@
 <table class="table-striped">
     <thead>
     <tr>
+        <th>STT</th>
         <th>Tên dịch vụ</th>
         <th>Đơn giá</th>
         <th>Đơn vị tiền</th>
@@ -59,12 +60,13 @@
     <tbody>
     <c:forEach items="${list}" var="item">
         <tr>
+            <td>${item.id}</td>
             <td>${item.ten}</td>
             <td>${item.donGia}</td>
             <td>${item.donViTien}</td>
             <td>${item.loaiDichVu.ten}</td>
             <td>${item.loaiDichVu.mota}</td>
-            <td><button type="button" class="btn btn-warning">Detail</button></td>
+            <td> <a href="/dichvu/detail?id=${item.id}" class="btn btn-warning">Detail</a></td>
         </tr>
     </c:forEach>
     </tbody>
